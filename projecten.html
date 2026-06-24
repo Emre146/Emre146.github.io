@@ -1,100 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Projecten – Emre Yalçin</title>
     <link rel="shortcut icon" href="img/ChatGPT Image 5 jun 2026, 12_37_55.png" type="image/x-icon" />
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
-<body>
-
 <body class="d-flex flex-column min-vh-100 bg-dark">
  
     <div id="navbar"></div>
     <script>
         fetch("nav.html")
             .then(r => r.text())
-            .then(html => { document.getElementById("navbar").innerHTML = html; });
-            
+            .then(html => {
+                document.getElementById("navbar").innerHTML = html;
+                const currentPage = location.pathname.split("/").pop().replace(".html", "") || "index";
+                document.querySelectorAll("#navbar [data-page]").forEach(link => {
+                    if (link.dataset.page === currentPage) {
+                        link.classList.add("active");
+                        link.setAttribute("aria-current", "page");
+                    }
+                });
+            });
     </script>
  
  
-    <main class="flex-grow-1">
-        <!-- Inhoud projecten pagina -->
+    <main class="flex-grow-1 text-white py-5">
+        <div class="container">
+
+            <h1 class="fw-bold mb-2">Projecten</h1>
+            <p class="mb-5">Een overzicht van de projecten die ik tijdens mijn opleiding heb gemaakt.</p>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+                <!-- Quiz -->
+                <div class="col">
+                    <div class="card h-100 bg-secondary text-white">
+                        <img src="img/quiz.png" class="card-img-top" alt="Schermafbeelding van het Quiz-project">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Quiz</h5>
+                            <p class="card-text">
+                                Een interactieve quiz-applicatie waarin de gebruiker meerkeuzevragen
+                                beantwoordt en aan het einde een score te zien krijgt.
+                            </p>
+                            <p class="card-text"><small class="text-body-secondary">Talen: HTML, CSS, JavaScript</small></p>
+                            <!-- TODO: vervang door de echte live GitHub Pages-link van je Quiz-project -->
+                            <a href="quiz.html" class="btn btn-danger mt-auto">Open</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Build your game (boter, kaas en eieren) -->
+                <div class="col">
+                    <div class="card h-100 bg-secondary text-white">
+                        <img src="img/boter-kaas-eieren.png" class="card-img-top" alt="Schermafbeelding van Boter, kaas en eieren">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Build your game – Boter, kaas en eieren</h5>
+                            <p class="card-text">
+                                Een digitale versie van het klassieke boter-kaas-en-eieren spel (tic-tac-toe),
+                                waarbij twee spelers om en om een vakje claimen totdat er een winnaar is.
+                            </p>
+                            <p class="card-text"><small class="text-body-secondary">Talen: HTML, CSS, JavaScript</small></p>
+                            <a href="boterkaaseieren.html" class="btn btn-danger mt-auto">Open</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mon-in -->
+                <div class="col">
+                    <div class="card h-100 bg-secondary text-white">
+                        <img src="img/ChatGPT Image 5 jun 2026, 12_37_55.png" class="card-img-top" alt="Schermafbeelding van Mon-in">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Mon-in</h5>
+                            <p class="card-text">
+                                <!-- TODO: check/pas aan of dit klopt -->
+                                Een clone van een professioneel sociaal netwerk (vergelijkbaar met LinkedIn),
+                                met een profielpagina en een nieuwsfeed.
+                            </p>
+                            <p class="card-text"><small class="text-body-secondary">Talen: HTML, CSS, JavaScript</small></p>
+                            <!-- TODO: dit linkt nu naar de GitHub-repo, niet naar een live pagina. Heb je een GitHub Pages-link? -->
+                            <a href="https://github.com/Emre146/mon-in-linkedin.git" class="btn btn-danger mt-auto">Open</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collectables -->
+                <div class="col">
+                    <div class="card h-100 bg-secondary text-white">
+                        <img src="img/collectables.png" class="card-img-top" alt="Schermafbeelding van Collectables">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Collectables</h5>
+                            <p class="card-text">
+                                <!-- TODO: check/pas aan of dit klopt -->
+                                Een website waarop verzamelobjecten worden getoond, met een overzichtspagina
+                                en een detailweergave per item.
+                            </p>
+                            <p class="card-text"><small class="text-body-secondary">Talen: HTML, CSS, JavaScript</small></p>
+                            <!-- TODO: vervang door de echte live link -->
+                            <a href="collectables.html" class="btn btn-danger mt-auto">Open</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Keuzedeel -->
+                <div class="col">
+                    <div class="card h-100 bg-secondary text-white">
+                        <img src="img/keuzedeel.png" class="card-img-top" alt="Schermafbeelding van het Keuzedeel-project">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Keuzedeel</h5>
+                            <p class="card-text">
+                                <!-- TODO: vul aan welk keuzedeel je hebt gevolgd en wat je hebt gemaakt -->
+                                Project gemaakt voor het keuzedeel van mijn opleiding.
+                            </p>
+                            <p class="card-text"><small class="text-body-secondary">Talen: vul aan</small></p>
+                            <!-- TODO: vervang door de echte live link -->
+                            <a href="keuzedeel.html" class="btn btn-danger mt-auto">Open</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </main>
-    
-<!-- <div class="d-flex justify-content-center align-items-center vh-100">
-    <div class="card" style="width: 22rem;"> -->
 
-
-
-<!-- <div class="row row-cols-1 row-cols-md-2 g-4">
-  <div class="col">
-    <div class="card">
-      <img src="img/boter-kaas-eieren.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <a href="boterkaaseieren.html" class="btn btn-primary">Open</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="https://github.com/Emre146/mon-in-linkedin.git" class="btn btn-primary">Open</a>
-
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-
-
-<div class="card-group">
-  <div class="card">
-    <img src="img/ChatGPT Image 5 jun 2026, 12_37_55.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <a href="https://github.com/Emre146/mon-in-linkedin.git" class="btn btn-primary">Open</a>
-    </div>
-    <div class="card-footer">
-      <small class="text-body-secondary">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-    <img src="img/boter-kaas-eieren.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-              <a href="boterkaaseieren.html" class="btn btn-primary">Open</a>
-    </div>
-    <div class="card-footer">
-      <small class="text-body-secondary">Last updated 3 mins ago</small>
-    </div>
-  </div>
-</div>
-
-
-
-<body class="d-flex flex-column min-vh-100">
 <footer class="bg-black text-white text-center py-3 mt-auto">
   <i class="bi bi-linkedin"></i>
-  <p class="mb-0"><a href="mailto:jouw@email.nl" class="text-white">302678499@student.rocmondriaan.nl</a></p>
+  <p class="mb-0"><a href="mailto:302678499@student.rocmondriaan.nl" class="text-white">302678499@student.rocmondriaan.nl</a></p>
 </footer>
-</body>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
-

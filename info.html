@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <link rel="shortcut icon" href="img/ChatGPT Image 5 jun 2026, 12_37_55.png" type="image/x-icon" />
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Over deze website – Emre Yalçin</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
      rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
     
 <body class="d-flex flex-column min-vh-100 bg-dark">
@@ -18,21 +17,89 @@
     <script>
         fetch("nav.html")
             .then(r => r.text())
-            .then(html => { document.getElementById("navbar").innerHTML = html; });
-            
+            .then(html => {
+                document.getElementById("navbar").innerHTML = html;
+                const currentPage = location.pathname.split("/").pop().replace(".html", "") || "index";
+                document.querySelectorAll("#navbar [data-page]").forEach(link => {
+                    if (link.dataset.page === currentPage) {
+                        link.classList.add("active");
+                        link.setAttribute("aria-current", "page");
+                    }
+                });
+            });
     </script>
  
-    <main class="flex-grow-1">
-        <!-- Inhoud info pagina -->
+    <main class="flex-grow-1 text-white py-5">
+        <div class="container">
+
+            <h1 class="fw-bold mb-4">Over deze website</h1>
+
+            <!-- Omschrijving -->
+            <section class="mb-5">
+                <h2 class="h4">Omschrijving</h2>
+                <p>
+                    <!-- TODO: check/pas aan naar je eigen woorden -->
+                    Deze portfolio website is gemaakt als eindopdracht voor periode 4. Het doel van de site
+                    is om in één overzicht te laten zien wie ik ben, welke projecten ik heb gemaakt tijdens
+                    mijn opleiding, en hoe ik te bereiken ben. De site is opgebouwd uit vier pagina's
+                    (Home, Projecten, Info en Over mij) die allemaal dezelfde navigatiebalk gebruiken,
+                    zodat de site overzichtelijk en consistent blijft.
+                </p>
+            </section>
+
+            <!-- Inspiratie -->
+            <section class="mb-5">
+                <h2 class="h4">Inspiratie</h2>
+                <p>
+                    <!-- TODO: vul aan waar je je echt op gebaseerd hebt, bv. voorbeeldsites of Bootstrap-templates die je bekeken hebt -->
+                    Voor het ontwerp heb ik gekeken naar moderne, donkere portfolio-websites met een
+                    strak kleurcontrast. Ik koos voor een donkere achtergrond met een felle accentkleur,
+                    zodat de navigatie en knoppen goed opvallen zonder dat de site overdreven kleurrijk wordt.
+                </p>
+            </section>
+
+            <!-- Kleurenschema -->
+            <section class="mb-5">
+                <h2 class="h4">Kleurenschema</h2>
+                <div class="row g-3">
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 rounded bg-dark border" style="height:80px;"></div>
+                        <p class="mb-0 mt-2"><small>Achtergrond – donker / zwart<br>#212529 / #000000</small></p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 rounded bg-danger" style="height:80px;"></div>
+                        <p class="mb-0 mt-2"><small>Accentkleur – rood<br>#dc3545</small></p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 rounded bg-white border" style="height:80px;"></div>
+                        <p class="mb-0 mt-2"><small>Tekst – wit<br>#ffffff</small></p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="p-3 rounded bg-secondary" style="height:80px;"></div>
+                        <p class="mb-0 mt-2"><small>Kaarten / vlakken – grijs<br>#6c757d</small></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sitemap -->
+            <section class="mb-5">
+                <h2 class="h4">Sitemap</h2>
+                <ul>
+                    <li><a class="text-white" href="index.html">Home</a> – introductie en welkomstboodschap</li>
+                    <li><a class="text-white" href="projecten.html">Projecten</a> – overzicht van mijn projecten (Quiz, Build your game, Mon-in, Collectables, Keuzedeel)</li>
+                    <li><a class="text-white" href="info.html">Info</a> – deze pagina, over de portfolio website zelf</li>
+                    <li><a class="text-white" href="over-mij.html">Over mij</a> – wie ik ben en mijn vaardigheden</li>
+                </ul>
+            </section>
+
+        </div>
     </main>
 
-
-<body class="d-flex flex-column min-vh-100">
 <footer class="bg-black text-white text-center py-3 mt-auto">
   <i class="bi bi-linkedin"></i>
-  <p class="mb-0"><a href="mailto:jouw@email.nl" class="text-white">302678499@student.rocmondriaan.nl</a></p>
+  <p class="mb-0"><a href="mailto:302678499@student.rocmondriaan.nl" class="text-white">302678499@student.rocmondriaan.nl</a></p>
 </footer>
-</body>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

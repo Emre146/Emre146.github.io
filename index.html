@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>    
+    <title>Home – Emre Yalçin</title>    
 
     <link rel="shortcut icon" href="img/ChatGPT Image 5 jun 2026, 12_37_55.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
      rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body class="d-flex flex-column min-vh-100 bg-dark">
@@ -19,8 +17,16 @@
     <script>
         fetch("nav.html")
             .then(r => r.text())
-            .then(html => { document.getElementById("navbar").innerHTML = html; });
-            
+            .then(html => {
+                document.getElementById("navbar").innerHTML = html;
+                const currentPage = location.pathname.split("/").pop().replace(".html", "") || "index";
+                document.querySelectorAll("#navbar [data-page]").forEach(link => {
+                    if (link.dataset.page === currentPage) {
+                        link.classList.add("active");
+                        link.setAttribute("aria-current", "page");
+                    }
+                });
+            });
     </script>
  
     <!-- HERO -->
@@ -39,6 +45,7 @@
             <div class="col-md-6 text-center">
                 <img src="img/neppefoto.jpg"
                      class="img-fluid rounded"
+                     alt="Foto van Emre Yalçin"
                      style="max-height: 500px;">
             </div>
  
@@ -53,5 +60,6 @@
     </p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
