@@ -1,0 +1,54 @@
+body {
+  background-color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+h1 {
+  color: blue;
+  font-size: 40px;
+}
+
+#status {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#board {
+  background-color: blue;
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px 50px 50px 50px;
+  grid-template-rows: 50px 50px 50px 50px 50px 50px;
+  gap: 5px;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 405px;
+}
+
+.cell {
+  background-color: darkblue;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.disc {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.disc.red { background-color: red; }
+.disc.yellow { background-color: yellow; }
+
+.disc.win {
+  border: 3px solid black;
+}
+
+button {
+  font-size: 16px;
+  padding: 8px;
+  margin-top: 15px;
+}
